@@ -7,7 +7,7 @@ related_targets: []
 
 # Surface brief: index.html (portfolio2)
 
-Scope: the whole one-page project portfolio at https://claudedaigan.com/portfolio2/. Visitor mode: Experience (the projects lead), with a Persuade close (email / LinkedIn).
+Scope: the whole one-page project portfolio at https://claudedaigan.com/projects/portfolio/. Visitor mode: Experience (the projects lead), with a Persuade close (email / LinkedIn).
 Audience: recruiters and hiring managers on desktop; business owners on phones. Job: see what he built, open a demo, decide to email.
 Action: primary = "Email me" (mailto), secondary = LinkedIn. Proof = 11 projects with live links, real screenshots of the 4 live demos.
 Constraints: content verbatim from /portfolio/; no marketing samples; no invented metrics; programmer/technology theme pinned by the user (the specific world was rolled); Lighthouse mobile >= 90.

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML/CSS with vanilla JS, no framework, no build step, no site generator (pinned by the user's brief). CSS is authored in `styles.css` and inlined into `index.html` by `tools/inline-css.py`. Hosted on GitHub Pages as a project repo under the custom domain path `https://claudedaigan.com/portfolio2/`, so every URL in the page is relative.
+Static HTML/CSS with vanilla JS, no framework, no build step, no site generator (pinned by the user's brief). CSS is authored in `styles.css` and inlined into `index.html` by `tools/inline-css.py`. Hosted on GitHub Pages as a project repo under the custom domain path `https://claudedaigan.com/projects/portfolio/`, so every URL in the page is relative.
 
 ## Users
 
