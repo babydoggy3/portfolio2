@@ -258,7 +258,7 @@ cursor: pointer;
 .route {
 --lit: 0;
 display: grid;
-grid-template-columns: 2.5rem minmax(0, 15rem) minmax(0, 10.5rem) minmax(0, 1fr) minmax(0, 11.5rem);
+grid-template-columns: 2.5rem minmax(0, 15rem) minmax(0, 11.5rem) minmax(0, 1fr) minmax(0, 13.5rem);
 align-items: center;
 gap: 0.9rem;
 padding: 0.3rem 0.5rem 0.3rem 0.3rem;
@@ -284,7 +284,7 @@ font: 700 0.875rem/1 var(--mono);
 box-shadow: inset 0 -3px 0 rgb(0 0 0 / 0.5), 0 0 0 3px var(--enamel-hi), 0 0 0 5px rgb(18 21 18 / 0.25);
 transition: box-shadow 200ms var(--ease), color 200ms;
 }
-.term { font-family: var(--mono); font-size: 0.75rem; line-height: 1.3; color: var(--ink-2); }
+.term { font-family: var(--mono); font-size: 0.75rem; line-height: 1.3; color: var(--ink-2); text-wrap: balance; }
 .term b { font-weight: 700; color: var(--ink); display: block; font-size: 0.75rem; letter-spacing: 0.12em; }
 .term--out { text-align: right; }
 .track {
@@ -464,8 +464,9 @@ scroll-margin-top: 1.5rem;
 .skills li { display: flex; gap: 0.75rem; align-items: baseline; padding: 0.5rem 0.75rem; font-size: 0.9375rem; line-height: 1.3; }
 .skills li span { font-family: var(--mono); font-size: 0.6875rem; color: var(--plate-dim); flex: none; }
 .record { border-top: 2px solid var(--ink); }
-.job { display: grid; grid-template-columns: 12rem minmax(0, 18rem) minmax(0, 1fr); gap: 0.5rem 2rem; padding-block: 1.1rem; border-bottom: 1px solid rgb(18 21 18 / 0.3); }
-.job time, .job .when { font-family: var(--mono); font-size: 0.8125rem; color: var(--ink-2); padding-top: 0.15rem; }
+.job { display: grid; grid-template-columns: 16.5rem minmax(0, 18rem) minmax(0, 1fr); gap: 0.5rem 2rem; padding-block: 1.1rem; border-bottom: 1px solid rgb(18 21 18 / 0.3); }
+.when .nw { white-space: nowrap; }
+.job time, .job .when { font-family: var(--mono); font-size: 0.8125rem; color: var(--ink-2); padding-top: 0.15rem; text-wrap: balance; }
 .job h3 { font-size: 1.0625rem; font-weight: 700; line-height: 1.25; }
 .job .org { display: block; font-weight: 400; color: var(--ink-2); font-size: 0.9375rem; margin-top: 0.15rem; }
 .job ul { display: grid; gap: 0.2rem; font-size: 0.9375rem; color: var(--ink); }
@@ -473,8 +474,8 @@ scroll-margin-top: 1.5rem;
 .job li::before { content: ""; width: 0.75rem; height: 2px; background: var(--ink); margin-top: 0.7em; flex: none; }
 .certs { display: grid; grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
 .cert { display: grid; grid-template-rows: auto 1fr; border: 2px solid var(--ink); border-radius: 6px; overflow: hidden; background: rgb(255 255 255 / 0.2); position: relative; }
-.cert__img { background: #f4f6f1; aspect-ratio: 400 / 283; display: grid; place-items: center; border-bottom: 2px solid var(--ink); }
-.cert__img img { width: 100%; height: 100%; object-fit: contain; }
+.cert__img { background: #f4f6f1; aspect-ratio: 400 / 283; position: relative; overflow: hidden; border-bottom: 2px solid var(--ink); }
+.cert__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .cert__txt { padding: 0.85rem 1rem 1rem; }
 .cert a { font-weight: 700; text-decoration: none; line-height: 1.25; display: inline; }
 .cert a::after { content: ""; position: absolute; inset: 0; }
@@ -491,7 +492,7 @@ scroll-margin-top: 1.5rem;
 .contact .btn { justify-content: center; border: 2px solid var(--plate-dim); box-shadow: none; background: transparent; }
 .contact .btn:hover { background: var(--plate-2); }
 .contact .btn:focus-visible { outline-color: var(--push); }
-.mailline { font-family: var(--mono); font-size: 0.875rem; text-align: center; color: var(--plate-text); }
+.mailline { font-family: var(--mono); font-size: 0.875rem; text-align: center; color: var(--plate-text); text-wrap: balance; }
 .mailline a:focus-visible { outline-color: var(--push); }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-block: 2rem 2.5rem; font-family: var(--mono); font-size: 0.75rem; color: var(--ink-2); }
 @media (max-width: 68rem) {
@@ -530,6 +531,12 @@ body { font-size: 1rem; }
 .route__name { font-size: 0.9375rem; }
 .st { font-size: 0.6875rem; padding: 0.4rem 0.45rem; }
 .track { gap: 0.4rem; }
+.routes .track { flex-wrap: wrap; row-gap: 6px; min-height: 26px;
+background: repeating-linear-gradient(to bottom, transparent 0 9px, var(--plate) 9px 17px, transparent 17px 32px); }
+.routes .track::before { display: none; }
+.routes .st { height: 26px; display: inline-flex; align-items: center; }
+.routes .track__lamp, .routes .track__occ { top: 13px; }
+.mailline { font-size: 0.8125rem; }
 .actions .push, .actions .btn { flex: 1 1 auto; justify-content: center; }
 .legend { display: none; }
 }
@@ -724,9 +731,9 @@ to { transform: none; }
 
 <section class="sec wrap" id="experience" aria-labelledby="experience-t">
 <div class="sec__head"><h2 class="h2 plate" id="experience-t">Work experience</h2><p class="sec__note">Marketing, HR, banking and procurement, most recent first.</p></div>
-<ol class="record"><li class="job"><p class="when">March 2025 – March 2026</p><h3>Digital Marketing Virtual Assistant<span class="org">Outsourced Doers</span></h3><ul><li>Automated marketing workflows using n8n</li><li>Streamlined repetitive business processes</li><li>Improved social media posting consistency</li></ul></li><li class="job"><p class="when">November 2023 – November 2024</p><h3>Human Resources Assistant<span class="org">Qualfon</span></h3><ul><li>Automated HR data entry using Python</li><li>Improved HR data accuracy and efficiency</li><li>Streamlined employee onboarding processes</li></ul></li><li class="job"><p class="when">September 2021 – February 2023</p><h3>Bank Teller<span class="org">Asia United Bank</span></h3><ul><li>Processed high-volume bank transactions</li><li>Ensured transaction accuracy and compliance</li><li>Balanced daily cash operations</li></ul></li><li class="job"><p class="when">August 2020 – January 2021</p><h3>Human Resources Department Aide<span class="org">LEYECO V</span></h3><ul><li>Maintained accurate HR records</li><li>Processed health clearances during COVID-19</li><li>Supported daily HR administrative operations</li></ul></li><li class="job"><p class="when">July 2019 – June 2020</p><h3>Procurement Officer<span class="org">KEITECH Educational Foundation, Inc.</span></h3><ul><li>Improved inventory tracking accuracy.</li><li>Supported cost-effective purchasing.</li><li>Maintained uninterrupted supply availability.</li></ul></li></ol>
+<ol class="record"><li class="job"><p class="when"><span class="nw">March 2025&nbsp;–</span> <span class="nw">March 2026</span></p><h3>Digital Marketing Virtual Assistant<span class="org">Outsourced Doers</span></h3><ul><li>Automated marketing workflows using n8n</li><li>Streamlined repetitive business processes</li><li>Improved social media posting consistency</li></ul></li><li class="job"><p class="when"><span class="nw">November 2023&nbsp;–</span> <span class="nw">November 2024</span></p><h3>Human Resources Assistant<span class="org">Qualfon</span></h3><ul><li>Automated HR data entry using Python</li><li>Improved HR data accuracy and efficiency</li><li>Streamlined employee onboarding processes</li></ul></li><li class="job"><p class="when"><span class="nw">September 2021&nbsp;–</span> <span class="nw">February 2023</span></p><h3>Bank Teller<span class="org">Asia United Bank</span></h3><ul><li>Processed high-volume bank transactions</li><li>Ensured transaction accuracy and compliance</li><li>Balanced daily cash operations</li></ul></li><li class="job"><p class="when"><span class="nw">August 2020&nbsp;–</span> <span class="nw">January 2021</span></p><h3>Human Resources Department Aide<span class="org">LEYECO V</span></h3><ul><li>Maintained accurate HR records</li><li>Processed health clearances during COVID-19</li><li>Supported daily HR administrative operations</li></ul></li><li class="job"><p class="when"><span class="nw">July 2019&nbsp;–</span> <span class="nw">June 2020</span></p><h3>Procurement Officer<span class="org">KEITECH Educational Foundation, Inc.</span></h3><ul><li>Improved inventory tracking accuracy.</li><li>Supported cost-effective purchasing.</li><li>Maintained uninterrupted supply availability.</li></ul></li></ol>
 <div class="sec__head" style="margin-top:clamp(2.5rem,5vw,3.5rem)"><h2 class="h2 plate" id="education">Education</h2></div>
-<div class="record"><div class="job"><p class="when">July 2016 – April 2019</p><h3>Bachelor of Science in Business Administration<span class="org">St. Peter's College of Ormoc</span></h3><ul><li>Major in Human Resource Development Management</li></ul></div></div>
+<div class="record"><div class="job"><p class="when"><span class="nw">July 2016&nbsp;–</span> <span class="nw">April 2019</span></p><h3>Bachelor of Science in Business Administration<span class="org">St. Peter's College of Ormoc</span></h3><ul><li>Major in Human Resource Development Management</li></ul></div></div>
 </section>
 
 <section class="sec wrap" id="certificates" aria-labelledby="certificates-t">
@@ -740,7 +747,7 @@ to { transform: none; }
 <div class="actions">
 <a class="push" href="mailto:claude_daigan@protonmail.com"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-mail"/></svg>Email me</a>
 <a class="btn" href="https://linkedin.com/in/claude-lester-d-a84558288/" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><use href="#i-linkedin"/></svg>LinkedIn<span class="sr"> (opens in a new tab)</span></a>
-<p class="mailline"><a href="mailto:claude_daigan@protonmail.com">claude_daigan@protonmail.com</a></p>
+<p class="mailline"><a href="mailto:claude_daigan@protonmail.com">claude_daigan@<wbr>protonmail.com</a></p>
 </div>
 </div>
 </section>
