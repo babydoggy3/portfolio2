@@ -104,7 +104,8 @@ ul, ol { padding: 0; list-style: none; }
   font-family: var(--mono);
   font-size: 0.8125rem;
 }
-.status { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.75rem; }
+.status { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.6rem; padding: 0.4rem 0.75rem; }
+.status > * { white-space: nowrap; }
 .status time { color: var(--plate-dim); }
 .nav { display: flex; flex-wrap: wrap; gap: 0.25rem; }
 .nav a {
