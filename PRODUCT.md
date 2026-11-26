@@ -18,7 +18,7 @@ Static HTML/CSS with vanilla JS, no framework, no build step, no site generator 
 
 ## Product Purpose
 
-A one-page, project-based portfolio for Claude Lester Daigan (Bohol, Philippines), Operations & Automation Specialist. It is a sibling of his general portfolio at `/portfolio/` but shows only the engineering work: 11 projects (AI agents, RAG, n8n and Apps Script automations, Sheets systems), with the work history, skills and certificates as secondary support. Success = a qualified visitor opens a demo, then emails or connects on LinkedIn.
+A one-page, project-based portfolio for Claude Lester Daigan (Central Visayas, Philippines), Operations & Automation Specialist. It is a sibling of his general portfolio at `/portfolio/` but shows only the engineering work: 11 projects (AI agents, RAG, n8n and Apps Script automations, Sheets systems), with the work history, skills and certificates as secondary support. Success = a qualified visitor opens a demo, then emails or connects on LinkedIn.
 
 ## Positioning
 
